@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="script/script.js"></script>
+        <title>Welcome To My World !</title>
+        <script>
+            //Code For The TypeWriter Effect On The Matrix Text.
+//
+//
+//eventListener.
+document.addEventListener('DOMContentLoaded',function(event){
+// array with texts to type in typewriter
+var dataText = [ "I Show The Beauty Of Style.", "Trough The Lines Of Code.", "Othman Kharbouch."];
+// keeps calling itself until the text is finished
+function typeWriter(text, i, fnCallback) {
+// check if text isn't finished yet
+if (i < (text.length)) {
+    // add next character to h1
+    document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+    // wait for a while and call this function again for next character
+    setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+    }, 100);
+}
+// text finished, call callback if there is a callback function
+else if (typeof fnCallback == 'function') {
+    // call callback after timeout
+    setTimeout(fnCallback, 700);
+    }
+}
+// start a typewriter animation for a text in the dataText array
+function StartTextAnimation(i) {
+if (typeof dataText[i] == 'undefined'){
+    setTimeout(function() {
+    StartTextAnimation(0);
+    }, 7000);
+}
+    // check if dataText[i] exists
+if (i < dataText[i].length) {
+    // text exists! start typewriter animation
+typeWriter(dataText[i], 0, function(){
+    //after callback (and whole text has been animated), start next text
+StartTextAnimation(i + 1);
+});
+}
+}
+// start the text animation
+StartTextAnimation(0);
+});
+////
+        </script>
+    </head>
+    <body>
+        <audio src="Assets/notification.mp3" style="display: none;" id="sound"></audio>
+        <header>
+            <div class="topnav">
+                <button onclick="showSideNav()" onmouseover="showSideNav()" onmouseout="hideSideNav()" id="menu"><img src="images/menu.png"></button>
+                <a href="#down"><button onclick="showAuthor()" id="author">Othman Kharbouch</button></a>
+                <button onclick="showSearch()" id="search"><img src="images/search.png"></button>
+            </div>
+            <div id="sidenav" onmouseover="showSideNav()" onmouseout="hideSideNav()">
+                <a href="#finish"><button><img src="images/contact.png"><strong>Contact The Developer</strong></button></a>
+                <a href="https://hotmanx813.github.io/ScreenLights.github.io/"><button><img src="images/projects.png"><strong>Other Projects Of The Same Developer</strong></button></a>
+                <a href="#finish"><button><img src="images/platforms.png"><strong>Other Platforms Of The Developer</strong></button></a>
+                <button onclick="showSettings()"><img src="images/settings.png"><strong>Settings</strong></button></a>
+                <a href="mailto:otmankharbouch813@gmail.com"><button><img src="images/donate.png" style="border: none!important;"><strong>Donate</strong></button></a>
+            </div>
+        </header>
+        <dialog open id="settings">
+            <div id="container">
+                <button id="exitbtn" onclick="closeIt()">X</button>
+            <p>Animations</p>
+            <label class="switch">
+                <input type="checkbox" checked id="animationSwitch" onclick="toggleAnimations()">
+                <div class="slider round"></div>
+            </label>
+            <p>Sound Effects</p>
+            <label class="switch">
+                <input type="checkbox" checked id="soundSwitch" onclick="toggleSound()">
+                <div class="slider round"></div>
+            </label>
+            <a href="Assets/code.txt"><button id="code"><p id="li">&lt;/&gt;</p>Source Code</button></a>
+            </div>
+        </dialog>
+        <div>
+            <div id="myimg">
+                <img src="images/svg.png" preload id="imgpc">
+            </div>
+            <div id="text">
+                <p>Here I build The future</p>
+            </div>
+        </div>
+        <div class="topper">
+            <div id="div1" onmouseover="show1()" onmouseout="hide1()">
+                <h3>Author's Background</h3>
+                <h5>Othman Kharbouch</h5>
+                <div id="span1">
+                    <p>Moroccan / 18 Years Old / Front-end Developer</p>
+                    <br>
+                </div>
+            </div>
+            <div id="div2" onmouseover="show2()" onmouseout="hide2()">
+                <h3>Author's <br> Pricing</h3>
+                <h5>For Front-end web development & UI/UX design</h5>
+                <div id="span2">
+                    <p>Contact :
+                        <em>otmankharbouch813@ gmail.com</em>
+                        <br>
+                    </p>
+                </div>
+            </div>
+            <div id="div3" onmouseover="show3()" onmouseout="hide3()">
+                <h3>Author's Other Projects</h3>
+                <h5>Screen-Light / My Blog Website</h5>
+                <div id="span3">
+                    <p>
+                        More Projects Coming Soon...</p>
+                        <br>
+                    </div>
+            </div>
+        </div>
+        <div id="fixer">
+            <div id="welcome">
+                <div id="w">W</div>
+                <div id="e">E</div>
+                <div id="l">L</div>
+                <div id="c">C</div>
+                <div id="o">O</div>
+                <div id="m">M</div>
+                <div id="e">E</div>
+                <div></div>
+                <div></div>
+                <div id="t">T</div>
+                <div id="o">O</div>
+                <div></div>
+                <div></div>
+                <div id="m">M</div>
+                <div id="y">Y</div>
+                <div></div>
+                <div></div>
+                <div id="w">W</div>
+                <div id="o">O</div>
+                <div id="r">R</div>
+                <div id="l">L</div>
+                <div id="d">D</div>
+            </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+            <div id="matrix">
+                <div id="line1" class="lines">
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                </div>
+                <div id="line2" class="lines">
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                        <div class="char">0</div>
+                        <div class="char">1</div>
+                </div>
+                <div id="line3" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                </div>
+                <div id="line4" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                </div>
+                <div id="line5" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line6" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line7" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line8" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line9" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line10" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line11" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line12" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line13" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line14" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line15" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line16" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line17" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line18" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line19" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line20" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="line21" class="lines">
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+            <div class="char">0</div>
+            <div class="char">1</div>
+                </div>
+                <div id="matrixtop"></div>
+                <div id="matrixbottom"></div>
+                <div id="matrixleft"></div>
+                <div id="matrixright"></div>
+                <div id="textmatrix" class="typewriter">
+                <h1>I Show The Beauty Of Code</h1>
+            </div>
+        </div>
+        </div>
+    <dialog open id="dialog">
+        <p>Too Much Animations ? Making Your PC Slow ?</p>
+        <button onclick="noAnimations()">Reduce Animations</button>
+        <button formmethod="dialog" onclick="hideThisDialog()">X</button>
+    </dialog>
+    <div id="loading" style="display: block;">
+        <div id="loader">
+            <p>Future Is Loading ... </p>
+            <div class="lds-ripple"><div></div><div></div></div>
+            <p id="tooltips">- Use A Computer For The Best Experience.<br>- Maximize Your Browser's Window.<br>- Set The Zoom In Your Computer To 100%.<br>- The Website Is Under Development, If You Find Any Problem Let Us Know.</p>
+        </div>
+    </div>
+    <div id="admission">
+        <div id="addtext">
+            <h2>For Me Code Is A Passion ,Code Is Love.</h2>
+        </div>
+        <form action="getMessage()" method="dialog" autocomplete="off">
+            <input type="text" id="message" maxlength="50" placeholder="Leave A Comment...">
+            <button onclick="closeMessage()" id="butt">Send</button>
+            <p id="groundtext">I Got Your Message ,Thank You.</p>
+        </form>
+        <div id="computer">
+            <div id="picture">
+                <img src="images/computer.png" alt="" id="gif2">
+                <div id="notecontainer"><div id="notification">
+                    <p id="hismessage">Nothing Yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="clouds">
+        <div class="cloud x1"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+        <div class="cloud x6"></div>
+        <div class="cloud x7"></div>
+        <div class="cloud x8"></div>
+    </div>
+    <div id="down">
+        <h1 id="downtext">This Is EveryThing Here ,But Not Everything I can Do !</h1>
+        <div id="flexible">
+            <div id="forhire">
+                <button class="hire">Hire Me</button>
+                <button class="support">Support</button>
+            </div>
+            <div id="boxer">
+                <div class="box" id="boxing">
+                    <img src="/images/myPicture.png" preload alt="" id="myself">
+                    <div id="info"><br><p>Othman Kharbouch</p><p>Front-end Developer</p><p style="font-size: 12px;color: rgb(241, 70, 130);display: block ;margin-bottom: 20px;"><i><small>HTML /CSS /Bootstrap / Tailwind CSS / javaScript/<small></i></p><br></div>
+                </div>
+            </div>
+            <div id="pis">
+                <p id="final">This Website Was Made For 2 Purposes ,Firstly I Wanted A Website About Me Where I Show Some Of My Skills ,And Secondly I want To Get A Job.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p style="width: 100%;" class="rating" id="tnks">Help Us Improve By Rating Your Experience.</p>
+        <div class="rate" id="rateform">
+            <input type="radio" id="star5" name="rate" value="5" onmouseover="mouseOverEx()" onmouseout="mouseOut()" onclick="rateExcellent()" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" onmouseover="mouseOverGood()" onmouseout="mouseOut()" onclick="rateGood()"/>
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" onmouseover="mouseOverOr()" onmouseout="mouseOut()" onclick="rateOrdinary()"/>
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" onmouseover="mouseOverBad()" onmouseout="mouseOut()" onclick="rateBad()"/>
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" onmouseover="mouseOverVBad()" onmouseout="mouseOut()" onclick="rateVeryBad()" />
+            <label for="star1" title="text">1 star</label>
+            <p class="rating" id="rating" style="position: absolute; margin-top: 50px; left: 50%; transform: translate(-50%);"></p>
+            <br>
+            <button onclick="showThanks()" id="subm">Submit</button>
+        </div>
+        <br>
+        <div id="finish">
+            <a href="mailto:otmankharbouch813@gmail.com"><img src="images/gmail.png" alt="" id="mail" onmouseover="showCaption1()" onmouseout="hideCaption()"><p class="pp" id="ppm">Mail</p></a>
+            <a href="https://web.facebook.com/profile.php?id=100048126011166"><img src="images/facebook.png" alt="" id="facebook" onmouseover="showCaption2()" onmouseout="hideCaption()"><p class="pp" id="ppf">Facebook</p></a>
+            <a href="https://www.instagram.com/othman.is.me/"><img src="images/instagram.png" alt="" id="insta" onmouseover="showCaption3()" onmouseout="hideCaption()"><p class="pp" id="ppi">Instagram</p></a>
+            <a href="https://twitter.com/OthmanDev"><img src="images/twitter.png" alt="" id="twitter" onmouseover="showCaption4()" onmouseout="hideCaption()"><p class="pp" id="ppt">Twitter</p></a>
+            <a href="https://github.com/hotmanX813"><img src="images/github.png" alt="" id="github" onmouseover="showCaption5()" onmouseout="hideCaption()"><p class="pp" id="ppg">Github</p></a>
+        </div>
+        <div id="credit">
+            <p>All Material Used For Building This Website Is Open Source
+            <a href="">Visual Code Studio</a> / <a href="">Krita Editor</a> / <a href="">Brackets</a>
+            All Images And Styles And Scripts Were Written Or Made From Scratch By The Developer.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    //For The TextShadow in Admission Text.
+    var mouse = {x: 0, y: 0};
+var h1 = document.querySelector('#addtext');
+
+document.addEventListener('mousemove', function(e){ 
+mouse.x = e.clientX || e.pageX; 
+mouse.y = e.clientY || e.pageY;
+var posX = parseInt((mouse.x) - (window.innerWidth / 4));
+var posY = parseInt((mouse.y) - (window.innerHeight / 4));
+h1.style.filter = "drop-shadow(" + posX/-100+"px " + posY/-100+"px 1px #0091dc)";
+}, false);
+</script>

@@ -1,0 +1,3274 @@
+<!DOCTYPE html>
+        <html lang="en" id="html">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="styles/style.css">
+                <script src="script/script.js"></script>
+                <title>Welcome To My World !</title>
+                <script>
+                    //Code For The TypeWriter Effect On The Matrix Text.
+        //
+        //
+        //eventListener.
+        document.addEventListener('DOMContentLoaded',function(event){
+        // array with texts to type in typewriter
+        var dataText = [ "I Show The Beauty Of Style.", "Trough The Lines Of Code.", "Othman Kharbouch."];
+        // keeps calling itself until the text is finished
+        function typeWriter(text, i, fnCallback) {
+        // check if text isn't finished yet
+        if (i < (text.length)) {
+            // add next character to h1
+            document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+            // wait for a while and call this function again for next character
+            setTimeout(function() {
+                typeWriter(text, i + 1, fnCallback)
+            }, 100);
+        }
+        // text finished, call callback if there is a callback function
+        else if (typeof fnCallback == 'function') {
+            // call callback after timeout
+            setTimeout(fnCallback, 700);
+            }
+        }
+        // start a typewriter animation for a text in the dataText array
+        function StartTextAnimation(i) {
+        if (typeof dataText[i] == 'undefined'){
+            setTimeout(function() {
+            StartTextAnimation(0);
+            }, 7000);
+        }
+            // check if dataText[i] exists
+        if (i < dataText[i].length) {
+            // text exists! start typewriter animation
+        typeWriter(dataText[i], 0, function(){
+            //after callback (and whole text has been animated), start next text
+        StartTextAnimation(i + 1);
+        });
+        }
+        }
+        // start the text animation
+        StartTextAnimation(0);
+        });
+        ////
+                </script>
+            </head>
+            <body>
+                <audio src="Assets/notification.mp3" style="display: none;" id="sound"></audio>
+                <header>
+                    <div class="topnav">
+                        <button onclick="showSideNav()" onmouseover="showSideNav()" onmouseout="hideSideNav()" id="menu"><img src="images/menu.png"></button>
+                        <a href="#down"><button onclick="showAuthor()" id="author">Othman Kharbouch</button></a>
+                        <button onclick="showSearch()" id="search"><img src="images/search.png"></button>
+                    </div>
+                    <div id="sidenav" onmouseover="showSideNav()" onmouseout="hideSideNav()">
+                        <a href="#finish"><button><img src="images/contact.png"><strong>Contact The Developer</strong></button></a>
+                        <a href="https://hotmanx813.github.io/ScreenLights.github.io/"><button><img src="images/projects.png"><strong>Other Projects Of The Same Developer</strong></button></a>
+                        <a href="#finish"><button><img src="images/platforms.png"><strong>Other Platforms Of The Developer</strong></button></a>
+                        <button onclick="showSettings()"><img src="images/settings.png"><strong>Settings</strong></button></a>
+                        <a href="mailto:otmankharbouch813@gmail.com"><button><img src="images/donate.png" style="border: none!important;"><strong>Donate</strong></button></a>
+                    </div>
+                </header>
+                <dialog open id="settings">
+                    <div id="container">
+                        <button id="exitbtn" onclick="closeIt()">X</button>
+                    <p>Animations</p>
+                    <label class="switch">
+                        <input type="checkbox" checked id="animationSwitch" onclick="toggleAnimations()">
+                        <div class="slider round"></div>
+                    </label>
+                    <p>Sound Effects</p>
+                    <label class="switch">
+                        <input type="checkbox" checked id="soundSwitch" onclick="toggleSound()">
+                        <div class="slider round"></div>
+                    </label>
+                    <a href="Assets/code.html"><button id="code"><p id="li">&lt;/&gt;</p>Source Code</button></a>
+                    </div>
+                </dialog>
+                <div>
+                    <div id="myimg">
+                        <img src="images/svg.png" preload id="imgpc">
+                    </div>
+                    <div id="text">
+                        <p>Here I build The future</p>
+                    </div>
+                </div>
+                <div class="topper">
+                    <div id="div1" onmouseover="show1()" onmouseout="hide1()">
+                        <h3>Author's Background</h3>
+                        <h5>Othman Kharbouch</h5>
+                        <div id="span1">
+                            <p>Moroccan / 18 Years Old / Front-end Developer</p>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="div2" onmouseover="show2()" onmouseout="hide2()">
+                        <h3>Author's <br> Pricing</h3>
+                        <h5>For Front-end web development & UI/UX design</h5>
+                        <div id="span2">
+                            <p>Contact :
+                                <em>otmankharbouch813@ gmail.com</em>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="div3" onmouseover="show3()" onmouseout="hide3()">
+                        <h3>Author's Other Projects</h3>
+                        <h5>Screen-Light / My Blog Website</h5>
+                        <div id="span3">
+                            <p>
+                                More Projects Coming Soon...</p>
+                                <br>
+                            </div>
+                    </div>
+                </div>
+                <div id="fixer">
+                    <div id="welcome">
+                        <div id="w">W</div>
+                        <div id="e">E</div>
+                        <div id="l">L</div>
+                        <div id="c">C</div>
+                        <div id="o">O</div>
+                        <div id="m">M</div>
+                        <div id="e">E</div>
+                        <div></div>
+                        <div></div>
+                        <div id="t">T</div>
+                        <div id="o">O</div>
+                        <div></div>
+                        <div></div>
+                        <div id="m">M</div>
+                        <div id="y">Y</div>
+                        <div></div>
+                        <div></div>
+                        <div id="w">W</div>
+                        <div id="o">O</div>
+                        <div id="r">R</div>
+                        <div id="l">L</div>
+                        <div id="d">D</div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div id="matrix">
+                        <div id="line1" class="lines">
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                        </div>
+                        <div id="line2" class="lines">
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                                <div class="char">0</div>
+                                <div class="char">1</div>
+                        </div>
+                        <div id="line3" class="lines">
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                        </div>
+                        <div id="line4" class="lines">
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                            <div class="char">0</div>
+                            <div class="char">1</div>
+                        </div>
+                        <div id="line5" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line6" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line7" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line8" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line9" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line10" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line11" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line12" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line13" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line14" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line15" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line16" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line17" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line18" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line19" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line20" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="line21" class="lines">
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                    <div class="char">0</div>
+                    <div class="char">1</div>
+                        </div>
+                        <div id="matrixtop"></div>
+                        <div id="matrixbottom"></div>
+                        <div id="matrixleft"></div>
+                        <div id="matrixright"></div>
+                        <div id="textmatrix" class="typewriter">
+                        <h1>I Show The Beauty Of Code</h1>
+                    </div>
+                </div>
+                </div>
+            <dialog open id="dialog">
+                <p>Too Much Animations ? Making Your PC Slow ?</p>
+                <button onclick="noAnimations()">Reduce Animations</button>
+                <button formmethod="dialog" onclick="hideThisDialog()">X</button>
+            </dialog>
+            <div id="loading" style="display: block;">
+                <div id="loader">
+                    <p>Future Is Loading ... </p>
+                    <div class="lds-ripple"><div></div><div></div></div>
+                    <p id="tooltips">- Use A Computer For The Best Experience.<br>- Maximize Your Browser's Window.<br>- Set The Zoom In Your Computer To 100%.<br>- The Website Is Under Development, If You Find Any Problem Let Us Know.</p>
+                </div>
+            </div>
+            <div id="admission">
+                <div id="addtext">
+                    <h2>For Me Code Is A Passion ,Code Is Love.</h2>
+                </div>
+                <form action="getMessage()" method="dialog" autocomplete="off">
+                    <input type="text" id="message" maxlength="50" placeholder="Leave A Comment...">
+                    <button onclick="closeMessage()" id="butt">Send</button>
+                    <p id="groundtext">I Got Your Message ,Thank You.</p>
+                </form>
+                <div id="computer">
+                    <div id="picture">
+                        <img src="images/computer.png" alt="" id="gif2">
+                        <div id="notecontainer"><div id="notification">
+                            <p id="hismessage">Nothing Yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="clouds">
+                <div class="cloud x1"></div>
+                <!-- Time for multiple clouds to dance around -->
+                <div class="cloud x2"></div>
+                <div class="cloud x3"></div>
+                <div class="cloud x4"></div>
+                <div class="cloud x5"></div>
+                <div class="cloud x6"></div>
+                <div class="cloud x7"></div>
+                <div class="cloud x8"></div>
+            </div>
+            <div id="down">
+                <h1 id="downtext">This Is EveryThing Here ,But Not Everything I can Do !</h1>
+                <div id="flexible">
+                    <div id="forhire">
+                        <button class="hire">Hire Me</button>
+                        <button class="support">Support</button>
+                    </div>
+                    <div id="boxer">
+                        <div class="box" id="boxing">
+                            <img src="/images/myPicture.png" preload alt="" id="myself">
+                            <div id="info"><br><p>Othman Kharbouch</p><p>Front-end Developer</p><p style="font-size: 12px;color: rgb(241, 70, 130);display: block ;margin-bottom: 20px;"><i><small>HTML /CSS /Bootstrap / Tailwind CSS / javaScript/<small></i></p><br></div>
+                        </div>
+                    </div>
+                    <div id="pis">
+                        <p id="final">This Website Was Made For 2 Purposes ,Firstly I Wanted A Website About Me Where I Show Some Of My Skills ,And Secondly I want To Get A Job.</p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p style="width: 100%;" class="rating" id="tnks">Help Us Improve By Rating Your Experience.</p>
+                <div class="rate" id="rateform">
+                    <input type="radio" id="star5" name="rate" value="5" onmouseover="mouseOverEx()" onmouseout="mouseOut()" onclick="rateExcellent()" />
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" onmouseover="mouseOverGood()" onmouseout="mouseOut()" onclick="rateGood()"/>
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" onmouseover="mouseOverOr()" onmouseout="mouseOut()" onclick="rateOrdinary()"/>
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" onmouseover="mouseOverBad()" onmouseout="mouseOut()" onclick="rateBad()"/>
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" onmouseover="mouseOverVBad()" onmouseout="mouseOut()" onclick="rateVeryBad()" />
+                    <label for="star1" title="text">1 star</label>
+                    <p class="rating" id="rating" style="position: absolute; margin-top: 50px; left: 50%; transform: translate(-50%);"></p>
+                    <br>
+                    <button onclick="showThanks()" id="subm">Submit</button>
+                </div>
+                <br>
+                <div id="finish">
+                    <a href="mailto:otmankharbouch813@gmail.com"><img src="images/gmail.png" alt="" id="mail" onmouseover="showCaption1()" onmouseout="hideCaption()"><p class="pp" id="ppm">Mail</p></a>
+                    <a href="https://web.facebook.com/profile.php?id=100048126011166"><img src="images/facebook.png" alt="" id="facebook" onmouseover="showCaption2()" onmouseout="hideCaption()"><p class="pp" id="ppf">Facebook</p></a>
+                    <a href="https://www.instagram.com/othman.is.me/"><img src="images/instagram.png" alt="" id="insta" onmouseover="showCaption3()" onmouseout="hideCaption()"><p class="pp" id="ppi">Instagram</p></a>
+                    <a href="https://twitter.com/OthmanDev"><img src="images/twitter.png" alt="" id="twitter" onmouseover="showCaption4()" onmouseout="hideCaption()"><p class="pp" id="ppt">Twitter</p></a>
+                    <a href="https://github.com/hotmanX813"><img src="images/github.png" alt="" id="github" onmouseover="showCaption5()" onmouseout="hideCaption()"><p class="pp" id="ppg">Github</p></a>
+                </div>
+                <div id="credit">
+                    <p>All Material Used For Building This Website Is Open Source
+                    <a href="">Visual Code Studio</a> / <a href="">Krita Editor</a> / <a href="">Brackets</a>
+                    All Images And Styles And Scripts Were Written Or Made From Scratch By The Developer.</p>
+                </div>
+            </footer>
+        </body>
+        </html>
+        <script>
+            //For The TextShadow in Admission Text.
+            var mouse = {x: 0, y: 0};
+        var h1 = document.querySelector('#addtext');
+        
+        document.addEventListener('mousemove', function(e){ 
+        mouse.x = e.clientX || e.pageX; 
+        mouse.y = e.clientY || e.pageY;
+        var posX = parseInt((mouse.x) - (window.innerWidth / 4));
+        var posY = parseInt((mouse.y) - (window.innerHeight / 4));
+        h1.style.filter = "drop-shadow(" + posX/-100+"px " + posY/-100+"px 1px #0091dc)";
+        }, false);
+        </script>
+        <style>
+        html {
+  background-color: #16163a;
+  font-family: 'Courier New',Courier,monospace;
+  color: #f0f8ff;
+  overflow-x: hidden;
+  text-align: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none
+}
+a {
+  text-decoration: none;
+  color: none;
+}
+#sidenav {
+  display: flex;
+  flex-wrap: wrap;
+  vertical-align: sub;
+  justify-content: space-evenly;
+  position: absolute;
+  display: none;
+  width: 220px;
+  height: fit-content;
+  background-color: #11112e;
+  color: white;
+  position: absolute;
+  top: 60px;
+  left: 3px;
+  z-index: 99999999999999999;
+  box-shadow: goldenrod 0 0 0 1.5px;
+}
+#sidenav button {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  display: flex;
+  align-content:space-around;
+  vertical-align: middle;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  border: none;
+  text-align: left;
+  text-indent: 5px;
+  justify-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+#sidenav button:hover {
+  box-shadow: rgba(218, 165, 32, 0.304) 0px 0px 100px 2px inset;
+}
+#sidenav button strong {
+  margin-top: 15px;
+}
+#sidenav img {
+  height: 50%;
+  margin-top: 10px;
+}
+.topnav {
+  overflow-x: hidden;
+  position: relative;
+  border-bottom: #000 solid .5px;
+  display: flex;
+  margin-top: -8px;
+  width: 100%;
+  background-color: #11112e;
+  max-height: 120px;
+  height: 7vh;
+  min-height: 60px;
+}
+.topnav button {
+  background-color: transparent;
+  font-family: 'Courier New',Courier,monospace;
+  color: #fff;
+  width: 25%;
+  max-width: 250px;
+  height: 100%;
+  border: none;
+  margin-inline: 5px;
+  border-bottom: #daa520 solid 1px;
+  color: #daa520;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  min-width: 50px;
+}
+#author {
+  background-color: transparent;
+  font-family: 'Courier New',Courier,monospace;
+  color: #fff;
+  width: 200px;
+  max-width: 250px;
+  height: 100%;
+  border: none;
+  margin-inline: 5px;
+  border-bottom: #daa520 solid 1px;
+  color: #daa520;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  min-width: 50px;
+}
+.topnav button:hover {
+  box-shadow: rgba(198,150,30,.35) 0 25px 20px -20px
+}
+#menu {
+  position: relative;
+  display: flex;
+  width: 5%;
+  min-width: 50px;
+  height: 100%;
+  cursor: pointer
+}
+#menu img {
+  margin: auto auto;
+  height: 3vh;
+}
+#search {
+  height: 100%;
+  width: 5%;
+  min-width: 50px;
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  right: 10px;
+}
+#search img {
+  width: 22px;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  vertical-align: middle
+}
+.topnav img:hover {
+  transform: scale(1.1)
+}
+.topper {
+  width: 99%;
+  margin-inline: 0.5%;
+  height: 20vh;
+  display: flex;
+  margin-left: 0px;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 6px 6px 6px 6px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 1;
+  min-height: fit-content;
+}
+.topper div {
+  position: relative;
+  min-width: 31%;
+  max-width: 31%;
+  border: #daa520 solid 1px;
+  box-shadow: rgba(207,157,31,.35) 0 25px 20px -20px;
+  border-radius: 5pt;
+  backdrop-filter: blur(5px);
+  height: fit-content;
+  min-height: 150px;
+}
+.topper #div1:hover {
+  height: 200px;
+  transition: .1s;
+  transform: scaleX(1.1);
+  cursor: pointer
+}
+.topper #div2:hover {
+  height: 220px;
+  transition: .1s;
+  transform: scaleX(1.1);
+  cursor: pointer
+}
+.topper #div3:hover {
+  height: 220px;
+  transition: .1s;
+  transform: scaleX(1.1);
+  cursor: pointer
+}
+.topper #span1,
+.topper #span2,
+.topper #span3 {
+  display: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  backdrop-filter: none;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: 100%;
+  max-width: max-content;
+}
+.topper #span1 p,
+.topper #span2 p,
+.topper #span3 p {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  align-content: center;
+  color: #daa520;
+  width: 100%;
+  transform: translate(-50%);
+  margin-left: 50%;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+#span2 em {
+  font-size: 10px;
+}
+#myimg {
+  width: fit-content;
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  height: 250px;
+  max-height: 250px;
+  max-width: 250px;
+  z-index: -2;
+}
+#myimg img {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  height: 40vw;
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(-1px 0px 5px rgba(1, 109, 187, .642));
+  z-index: 1;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0)
+  }
+  50% {
+    transform: translateY(-20px)
+  }
+  100% {
+    transform: translateY(0)
+  }
+}
+#text {
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-height: fit-content;
+  min-height: 40vh;
+}
+#text p {
+  text-align: left;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  height: fit-content;
+  background: -webkit-linear-gradient(#ffc430,#ffdc84);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 160%;
+  filter: drop-shadow(5px 5px 16px goldenrod);
+  margin-top: 0;
+}
+#welcome {
+  font-size: 400px;
+  gap: 50px;
+  color: #daa520;
+  font-family: Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
+  font-weight: 900;
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  height: fit-content;
+  margin-left: 1%;
+  animation-name: leftToRight;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  z-index: -99;
+}
+@keyframes leftToRight {
+  0% {
+    transform: translate(120%,0px)
+  }
+  80% {
+    transform: translate(-5550px,0)
+  }
+  100% {
+    transform: translate(5550px,0)
+  }
+}
+#welcome div {
+  background: -webkit-linear-gradient(#ffc430,#f1bd39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 70%;
+  min-width: fit-content;
+  height: fit-content;
+  animation-name: line;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  margin-right: 100px;
+  filter: drop-shadow(2px -14px 30px #2a7181a0);
+  z-index: 0;
+}
+@keyframes line {
+  0% {
+    transform: rotate(0)
+  }
+  50% {
+    transform: rotate(27deg)
+  }
+  100% {
+    transform: rotate(0)
+  }
+}
+#matrix {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+  border: none;
+  margin-left: 10px;
+  border-radius: 9pt;
+  font-size: 1.2vw;
+}
+#matrixbottom {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(goldenrod,#daa520);
+  width: 100%;
+  height: 10px;
+  z-index: 0
+}
+#matrixright {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: #daa520;
+  width: 10px
+}
+#matrixtop {
+  position: absolute;
+  right: 0;
+  height: 10px;
+  background-color: #daa520;
+  width: 100%
+}
+#matrixleft {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: #daa520;
+  width: 10px
+}
+.char {
+  float: right;
+  font-family: cursive;
+  filter: drop-shadow(5px 10px 0px rgba(0, 25, 252, .981));
+  color: #00ff2f;
+  align-items: center;
+  text-align: center;
+  margin: 16px;
+  animation-name: fallDown;
+  animation-duration: 3.6s;
+  animation-iteration-count: infinite;
+  z-index: -1
+}
+@keyframes fallDown {
+  0% {
+    transform: translateY(-1900%)
+  }
+  50% {
+    transform: translateY(-1000%)
+  }
+  100% {
+    transform: translateY(0)
+  }
+}
+#textmatrix {
+  text-indent: 0;
+  line-height: 300px;
+  margin-left: 30px;
+  text-align: left;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: 900;
+  font-size: 2.2vw;
+  background: -webkit-linear-gradient(#32ff7d,#02ffb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 26vh;
+  filter: drop-shadow(5px 5px 16px rgb(32, 128, 218));
+  position: absolute;
+  top: 30%;
+}
+#line1 {
+  margin-top: -20px
+}
+#line3 {
+  margin-top: -30px
+}
+#line5 {
+  margin-top: -20px
+}
+#line7 {
+  margin-top: -10px
+}
+#line9 {
+  margin-top: -20px
+}
+#line11 {
+  margin-top: -30px
+}
+#line13 {
+  margin-top: -20px
+}
+#line15 {
+  margin-top: -40px
+}
+#line17 {
+  margin-top: -15px
+}
+#line19 {
+  margin-top: -5px
+}
+#line21 {
+  margin-top: -2px
+}
+.typewriter h1 {
+  font-size: 3em;
+  line-height: 100px;
+  color: #fff
+}
+@keyframes caret {
+  50% {
+    border-color: transparent
+  }
+}
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+#dialog {
+  position: fixed;
+  bottom: 20px;
+  margin-right: 20px;
+  width: 300px;
+  height: 70px;
+  font-size: 12px;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  border: none;
+  border-radius: 11pt;
+  background-color: #11112e;
+  color: #fff;
+  animation-name: popUp;
+  animation-duration: 2s;
+  animation-delay: 2.5s;
+  z-index: 99
+}
+@keyframes popUp {
+  0% {
+    transform: translateY(500px)
+  }
+  30% {
+    transform: translateY(0)
+  }
+  50% {
+    box-shadow: none
+  }
+  60% {
+    box-shadow: red 0 0 0 2px
+  }
+  65% {
+    box-shadow: none
+  }
+  70% {
+    box-shadow: red 0 0 0 2px
+  }
+  75% {
+    box-shadow: red 0 0 0 2px
+  }
+  80% {
+    box-shadow: none
+  }
+  85% {
+    box-shadow: red 0 0 0 2px
+  }
+  100% {
+    box-shadow: none
+  }
+}
+dialog button {
+  background-color: transparent;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  border: solid #daa520 1px;
+  padding: 5px;
+  padding-inline: 10px;
+  color: #daa520;
+  border-radius: 5pt;
+  cursor: pointer;
+  margin-inline: 5px
+}
+dialog button:hover {
+  background-color: #daa520;
+  color: #11112e
+}
+dialog button:active {
+  transform: scale(1.1)
+}
+#loading {
+  z-index: 999;
+  position: fixed;
+  overflow: hidden;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #171331;
+  color: #fff;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-size: 16px;
+  animation-name: colorChange;
+  animation-duration: 2.8s
+}
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+@keyframes colorChange {
+  0% {
+    background-color: #000;
+    display: none
+  }
+  20% {
+    background-color: #171331;
+    display: block;
+  }
+  79% {
+    background-color: #171331;
+    display: block;
+  }
+  100% {
+    background-color: transparent;
+    display: none;
+  }
+}
+#admission {
+  position: relative;
+  overflow: hidden;
+  width: 102%;
+  height: fit-content;
+  min-height: 100vh;
+  z-index: 1;
+}
+#addtext {
+  width: 80%;
+  font-size: 72px;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  background: -webkit-linear-gradient(#ffc430,#f1bd39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  margin-left: 15px;
+  color: #daa520;
+  filter: drop-shadow(0px 0px 0px rgb(55, 42, 0)) drop-shadow(0px 0px 5px rgba(32, 137, 218, .591));
+  z-index: 99;
+}
+#tooltips {
+  font-size: 12px;
+  color: grey;
+  font-family: consolas;
+  line-height: 120%;
+  text-align: left;
+}
+#admission input {
+  text-align: center;
+  margin-top: 0;
+  width: 450px;
+  height: 100px;
+  border-radius: 12pt;
+  border: #daa520 solid 2px;
+  color: #daa520;
+  font-size: 15px;
+  background-color: #16163a;
+  font-family: consolas;
+  box-shadow: 0 5px 0 2px #5b450c;
+  z-index: 2;
+}
+#admission input:focus {
+  box-shadow: 0 5px 0 1px #5b450c;
+  transform: translateY(2px);
+}
+#butt {
+  width: 100px;
+  height: 105px;
+  border: #daa520 2px solid;
+  border-radius: 12pt;
+  background-color: #daa520;
+  color: #16163a;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 5px 0 2px #2e2408;
+}
+#butt:hover {
+  box-shadow: 0 5px 0 1px #2e2408,0 0 15px 2px #2e2408 inset;
+  transform: translateY(3px);
+  border: none;
+  cursor: pointer
+}
+#butt:focus {
+  filter: blur(2500px);
+  transition: 3s;
+  cursor: default
+}
+form {
+  left: 0;
+  position: relative;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  gap: 25px;
+  z-index: 99;
+}
+#groundtext {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+  color: #daa520;
+  background: -webkit-linear-gradient(#ffc430,#f1bd39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  filter: blur(2500px);
+  z-index: 1;
+}
+#gif2 {
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+#computer {
+  overflow: hidden;
+  top: 25px;
+  position: absolute;
+  margin-right: 0;
+  margin-left: 50%;
+  width: 50%;
+  height: 95%;
+  z-index: -1;
+}
+#fixer {
+  overflow: hidden;
+  width: 100vw;
+  height: fit-content;
+}
+#notification {
+  overflow-y: hidden;
+  top: 10px;
+  left: 5px;
+  min-width: 200px;
+  min-height: 50px;
+  height: auto;
+  background-color: #83888d;
+  color: #000;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  border-radius: 6pt;
+  position: absolute;
+  font-family: consolas;
+  font-weight: 900;
+  transform: translateY(-120%);
+  transition: 1s;
+  z-index: 999999999999;
+}
+#notecontainer {
+  overflow: hidden;
+  position: absolute;
+  width: 250px;
+  top: 58px;
+  right: 10px;
+  height: 500px;
+}
+#picture {
+  position: absolute;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  z-index: -1;
+}
+#down {
+  position: relative;
+  margin-top: 400px;
+  width: 100%;
+  margin-left: 0;
+  min-height: 100vh;
+  height: fit-content;
+  min-height: fit-content;
+  z-index: 1;
+  background-image: linear-gradient(transparent ,#080816);
+  
+}
+#downtext {
+  width: fit-content;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 48px;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  color: #daa520;
+  font-weight: bolder;
+  backdrop-filter: drop-shadow(0px 0px 1px #4f4f1b);
+  background: -webkit-linear-gradient(#ffc430,#ffcf55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#flexible {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box {
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: fit-content;
+  min-height: 70%;
+  --border-size: 3px;
+  --border-angle: 0turn;
+  width: 50%;
+  background-image: conic-gradient(from var(--border-angle),#213,#112 50%,#213),conic-gradient(from var(--border-angle),transparent 20%,#08f,#f03);
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-animation: bg-spin 3s linear infinite;
+  animation: bg-spin 3s linear infinite;
+}
+#boxer {
+  position: relative;
+  width: 48%;
+  height: fit-content;
+  min-height: 780px;
+  flex-grow: 1;
+}
+#forhire {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  min-width: 300px;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+@-webkit-keyframes bg-spin {
+  to {
+    --border-angle: 1turn
+  }
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn
+  }
+}
+.box:hover {
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn
+}
+#myself {
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 5%;
+  flex-grow: 1;
+  transform: translateY(10px);
+}
+#myself:hover {
+  transform: translateY(0px);
+  transition: 0.5s;
+  cursor:pointer;
+}
+#contact {
+  border: none;
+  width: 50%;
+  height: 30px;
+  color: #213;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: 900;
+  border-radius: 10pt;
+  font-size: 12px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(#08f 10%,#f03)
+}
+#contact:hover {
+  background-image: linear-gradient(#f03 10%,#08f);
+  cursor: pointer
+}
+#info {
+  background-color: #0c0c22;
+  width: 90%;
+  height: fit-content;
+  bottom: 15px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  border-radius: 10pt;
+  box-shadow: #213 0 -10px 15px 1px;
+  font-family: consolas;
+  height: fit-content;
+  height: 14vh;
+  height: fit-content;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+#info p {
+  margin-top: 0
+}
+.hire {
+  width: 30%;
+  min-width: 120px;
+  min-height: 80px;
+  border-radius: 9pt;
+  border: none;
+  color: #1c1e3c;
+  background-image: linear-gradient(#ebd915,#fdf05e);
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  box-shadow: #daa520 0 0 16px -1px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+.support {
+  width: 30%;
+  min-width: 120px;
+  min-height: 80px;
+  border-radius: 9pt;
+  border: none;
+  color: #e8ca1f;
+  background-color: transparent;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  box-shadow: #daa520 0 0 16px -1px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+.hire:hover,
+.support:hover {
+  cursor: pointer;
+  animation-name: magical;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite
+}
+.support:focus {
+  transform: scale(1.1);
+  box-shadow: none;
+  background-image: linear-gradient(#ebd915,#fdf05e);
+  color: #11112e;
+  animation-name: none;
+  transition: .5s
+}
+.hire:focus {
+  transform: scale(1.1);
+  box-shadow: none;
+  background-image: none;
+  background-color: #11112e;
+  color: #daa520;
+  transition: .5s
+}
+@keyframes magical {
+  0% {
+    box-shadow: #daa520 0 0 16px -1px
+  }
+  50% {
+    box-shadow: #daa520 0 0 50px 1px
+  }
+  100% {
+    box-shadow: #daa520 0 0 16px -1px
+  }
+}
+#final {
+  font-size: 13px;
+  width: 99%;
+  text-align: center;
+  animation: colorChanger;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  height: 30px;
+  top: 0;
+  position: absolute;
+}
+#pis {
+  position: relative;
+  left: 0;
+  height: 60px;
+  width: 94vw;
+  margin-bottom: 15%;
+  margin-bottom: 0;
+}
+@keyframes colorChanger {
+  0% {
+    color: #08f
+  }
+  25% {
+    color: #90f
+  }
+  50% {
+    color: #f03
+  }
+  75% {
+    color: #0f2
+  }
+  100% {
+    color: #08f
+  }
+}
+.rate {
+  float: left;
+  margin-left: 50%;
+  height: 46px;
+  padding: 0 10px;
+  transform: translate(-50%);
+  transition: 2s
+}
+.rating {
+  color: #daa520;
+  font-size: 15px;
+  font-weight: 1000;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  filter: none
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  display: none
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #651d65
+}
+.rate:not(:checked) > label:before {
+  content: '★ '
+}
+.rate > input:checked ~ label {
+  color: #daa520
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #daa520
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: red
+}
+.rate button {
+  display: none;
+  margin-top: 70px;
+  width: 70px;
+  height: 30px;
+  border: none;
+  transform: translate(40px);
+  background-color: transparent;
+  color: #daa520;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  box-shadow: #daa520 0 0 0 1.5px;
+  border-radius: 9pt
+}
+.rate button:hover {
+  box-shadow: #daa520 0 0 0 1.5px,0 0 5px 2px rgba(218,165,32,.713) inset;
+  cursor: pointer
+}
+footer {
+  height: 500px;
+  background-color: #080816;
+  border-top: #11112e solid 2px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+#finish {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  gap: 25px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  min-height: 100px;
+  margin-top: 20px;
+}
+.pp {
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
+  font-weight: 15px;
+  font-weight: 1000;
+  width: 50px;
+}
+#ppm {
+  color: #080816;
+  position: absolute;
+  text-align: center;
+  margin-left: -3px
+}
+#ppf {
+  color: #080816;
+  position: absolute;
+  text-align: center;
+  width: 70px;
+  margin-left: -13px
+}
+#ppi {
+  color: #080816;
+  position: absolute;
+  width: 70px;
+  margin-left: -13px
+}
+#ppg {
+  color: #080816;
+  position: absolute;
+  margin-left: -3px
+}
+#ppt {
+  color: #080816;
+  position: absolute;
+  margin-left: -2px
+}
+#finish a {
+  margin-inline: 10px;
+  width: 50px;
+  height: 5px;
+  border-radius: 100%;
+  border: solid 2px;
+  background-color: transparent;
+  box-shadow: #174b73 0 0 10px 2px
+}
+#finish a img {
+  width: 40px;
+  height: 40px;
+  margin-top: -100%;
+  transform: translateY(-10px)
+}
+#finish a img:hover {
+  transform: translateY(-20px);
+  filter: drop-shadow(0px 0px 15px white)
+}
+#insta {
+  width: 70px
+}
+#tnks {
+  font-family: 'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;
+  color: #fff
+}
+#credit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #11112e
+}
+#credit a {
+  text-decoration: none;
+  color: #daa520
+}
+/*loading*/
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+#clouds{
+	padding: 100px 0;
+	background: transparent;
+  overflow: hidden;
+  height: 20vh;
+}
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: transparent;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+  margin-left: 120vw;
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #1f2a50;
+	width: 130px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  background: #1f2a50;
+	-webkit-animation: moveclouds 11s linear infinite;
+	-moz-animation: moveclouds 11s linear infinite;
+	-o-animation: moveclouds 11s linear infinite;
+  animation-delay: 0s;
+}
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  animation-delay: 2s;
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+  animation-delay: 2s;
+}
+
+.x3 {
+  top: -100px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+  animation-delay:5s ;
+}
+
+.x4 {
+  top: -100px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+  animation-delay:8s ;
+}
+
+.x5 {
+  top: -50px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+  animation-delay: 12s;
+}
+.x6 {
+  top: -250px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 12s linear infinite;
+	-moz-animation: moveclouds 12s linear infinite;
+	-o-animation: moveclouds 12s linear infinite;
+  animation-delay: 15s;
+}
+.x7 {
+  top: -350px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+  animation-delay: 18s;
+}
+.x8 {
+  top: -400px;
+  background: #1f2a50;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 10s linear infinite;
+	-moz-animation: moveclouds 10s linear infinite;
+	-o-animation: moveclouds 10s linear infinite;
+  animation-delay: 20s;
+}
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 120vw;}
+	100% {margin-left: -120vw;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 150vw;}
+	100% {margin-left: -150vw;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 150vw;}
+	100% {margin-left: -150vw;}
+}
+#settings {
+  display: none;
+  position: fixed;
+  color: goldenrod;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  top: 0;
+  margin-bottom: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  animation: none;
+  z-index: 999999999999999999999;
+}
+#container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  min-width: 300px;
+  height: 30%;
+  min-height: 200px;
+  position: absolute;
+  border: black solid;
+  background-color: #080828;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#exitbtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  border-color: #000;
+}
+#code {
+  position: relative;
+  border: black solid ;
+  background-color: transparent;
+  color: goldenrod;
+  width: 50%;
+  height:auto;
+  padding: 6px 6px 10px 6px;
+}
+#container #li {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  font-size: 30px;
+  filter: blur(2.5px);
+}
+#container p {
+  width: 50%;
+  flex-grow: 1;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10%;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #818181;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: goldenrod;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px goldenrod;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*____________________*/
+/*Media Queries*/
+@media screen and (max-device-width: 280px) {
+  .topnav {
+    width: 100vw;
+  }
+}
+/* For Tablet View */
+@media screen and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+  }
+  #forhire {
+    width : 100%;
+    margin-bottom: 50px;
+  }
+  #boxer {
+    height: fit-content;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    flex-grow: 0.5;
+    border: white solid;
+  }
+  .box {
+    height: fit-content;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+    width: 100%;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+/*Tablet with landscape mode*/
+@media screen and (max-device-width: 1281px) and (min-device-width: 820px) {
+  #boxer {
+    flex-grow: none;
+    height: fit-content;
+    
+  }
+  .box {
+    max-width: 300px;
+  }
+  #flexible {
+    height: fit-content;
+  }
+}
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px)
+and (orientation: portrait) {
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+@media screen and (min-device-width: 1024px)
+and (max-device-width: 768px) {
+
+}
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px)
+and (orientation: landscape) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+/* For Mobile Phones Portrait or Landscape View */
+@media screen
+and (max-device-width: 640px) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px)
+and (device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px)
+and (min-device-width: 375px)
+and (-webkit-min-device-pixel-ratio: 3) {
+  #myimg {
+    display: none;
+  }
+  #addtext {
+    width: 100%;
+    font-size: 48px;
+  }
+  #admission input{
+    width: 100%;
+    z-index: -1;
+  }
+  form {
+    width: 98%;
+  }
+  #forhire {
+    width : 100%
+  }
+  #boxer {
+    width: 100%;
+  }
+  .box {
+    width: 75%;
+  }
+  #gif2 {
+    display: none;
+  }
+  #computer {
+    z-index: 99;
+    width: 0;
+  }
+  #notecontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 999;
+  }
+  #notification {
+    width: 100%;
+  }
+  #addtext {
+    z-index: -99;
+  }
+  form {
+    z-index: -9;
+  }
+  #welcome div{
+    z-index: -999;
+  }
+  #fixer {
+    z-index: -999999;
+  }
+  .topper div {
+    height: auto;
+  }
+}
+        </style>

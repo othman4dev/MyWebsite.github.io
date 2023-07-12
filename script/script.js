@@ -110,6 +110,8 @@ var message = document.getElementById("message").value;
 let note = document.getElementById("hismessage");
 var text = document.getElementById("groundtext");
 var notification = document.getElementById("notification");
+var notecontainer = document.getElementById("notecontainer");
+notecontainer.style.display = ("block");
 var computer = document.getElementById("computer");
 var sound = document.getElementById("sound");
 input.style.transition = ("2s");
@@ -120,7 +122,7 @@ note.innerText = "Visitor : " +  message;
 notification.style.transform = ("translateY(0%)");
 notification.style.transition = ("1s");
 sound.play();
-setTimeout(function() {notification.style.display = ("none")},5000);
+setTimeout(function() {notification.style.display = ("none");notecontainer.style.display = ("none")},5000);
 }
 //------
 //Text shadow follow mouse.

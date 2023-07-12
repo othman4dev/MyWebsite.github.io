@@ -694,6 +694,7 @@ form {
   z-index: 999999999999;
 }
 #notecontainer {
+  display:none;
   overflow: hidden;
   position: absolute;
   width: 250px;
